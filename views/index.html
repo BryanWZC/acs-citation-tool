@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1" />
+    <meta name="description" content="ACS citation tool"/>
+    <title>ACS citation tool</title>
+    <link rel="stylesheet" type='text/css' href="./index.css">
+    <script defer type='module' src='../index.js'></script>
+</head>
+<body>
+    <div id='left-container'>
+        <h1>ACS Citation Tool (online articles only)</h1>
+        <p id='self'>By: Bryan Wong</p>
+        <p>Names option 1 (example: John Doe, ... <span class='arrow'>&#8594;</span> Doe, J.; ...)</p>
+        <textarea id='names-input' autocomplete='off' placeholder='enter comma separated names here...'></textarea>
+        <p>Names option 2 (example: Lehman J W, ... <span class='arrow'>&#8594;</span> Lehman J. W.; ...)</p>
+        <textarea id='names-input-2' autocomplete='off' placeholder='enter comma separated names here...'></textarea>
+        <p>Article title</p>
+        <textarea id='article-title' autocomplete='off' placeholder='enter article title here...'></textarea>
+        <p>Journal title</p>
+        <textarea id='journal-title' autocomplete='off' placeholder='enter journal title here...'></textarea>
+        <p>Year of publication</p>
+        <textarea id='year' autocomplete='off' placeholder='enter year here...'></textarea>
+        <p>Journal volume</p>
+        <textarea id='journal-volume' autocomplete='off' placeholder='enter year here...'></textarea>
+        <p>Pages (example: 123-125)</p>
+        <textarea id='pages' autocomplete='off' placeholder='enter year here...'></textarea>
+    </div>
+    <div id='right-container'>
+        <div id='button-container'>
+            <button class='btn submit'>Submit</button>
+            <button class='btn remove'>Remove Last Citation</button>
+            <button class='btn cassi'>CASSI Website</button>
+        </div>
+        <p>Bibliography: </p>
+        <div id='results'></div>
+    </div>
+	<noscript>
+    You need to enable JavaScript to run this app.
+	</noscript>
+
+</body>
+</html>

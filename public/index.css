@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: #353535;
+}
+
+body {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left-container {
+    width: 52%;
+}
+
+#right-container {
+    width: 45%;
+    padding-top: 37px;
+}
+
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+#self {
+    font-size: 12px;
+    color: #8C857D;
+    margin-bottom: 24px;
+}
+
+span.arrow {
+    font-size: 20px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 25px;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.btn.submit {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    background-color: #09814A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn.remove {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    background-color: #FF4365;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn.cassi {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    background-color: #386FA4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;  
+}
+
+.btn.submit:hover {
+    background-color: #0DBF6F;
+}
+
+.btn.remove:hover {
+    background-color: #FF99AC;
+}
+
+.btn.cassi:hover {
+    background-color: #95B9DB;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+#acs-citation {
+    font-weight: 400;
+}
+
+span {
+    font-style: italic;
+}
+
+span#span-year {
+    font-style: normal;
+    font-weight: bold;
+}
+
+#button-container {
+    display: flex;
+    width:500px;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #left-container {
+        width: 100%;
+    }
+
+    #right-container {
+        width: 100%;
+        padding-top: 0;
+    }
+}
