@@ -66,7 +66,7 @@ textarea {
 
 #button-container {
     display: flex;
-    width: 500px;
+    width: 330px;
     justify-content: space-between;
 }
 
@@ -85,11 +85,6 @@ textarea {
     background-color: #09814A;
 }
 
-.btn.remove {
-    font-size: 16px;
-    background-color: #FF4365;
-}
-
 .btn.cassi {
     font-size: 16px;
     background-color: #48B8D0;
@@ -99,24 +94,25 @@ textarea {
     background-color: #0DBF6F;
 }
 
-.btn.remove:hover {
-    background-color: #FF99AC;
-}
-
 .btn.cassi:hover {
     background-color: #9ED9E6;
 }
 
 #copy-clear-container {
-    width: 330px;
+    width: 500px;
     display: flex;
     justify-content: space-between;
 }
 
-.btn.copy, .btn.clear {
+.btn.copy, .btn.clear, .btn.remove {
     height: 30px;
     background-color: #564D4A;
     font-size: 16px;
+}
+
+.btn.remove {
+    font-size: 16px;
+    background-color: #6881A1;
 }
 
 .btn.clear {
@@ -125,6 +121,10 @@ textarea {
 
 .btn.copy:hover {
     background-color: #988A86;
+}
+
+.btn.remove:hover {
+    background-color: #8B9EB7;
 }
 
 .btn.clear:hover {

@@ -89,7 +89,8 @@ const parseStringToAcs = () => {
  */
 const handleRemove = () =>{
     acsStringArr = acsStringArr.slice(0, -1);
-    document.querySelector('#results').innerHTML = acsStringArr.join('<br>');
+    document.querySelector('#results').innerHTML = acsStringArr.join('');
+    window.localStorage.setItem('data', JSON.stringify(acsStringArr));
 };
 
 /**
@@ -125,10 +126,10 @@ const clearAll = () => {
 // onClick events
 document.querySelector('.submit').onclick = parseStringToAcs;
 
-document.querySelector('.remove').onclick = handleRemove;
-
 document.querySelector('.cassi').onclick = handleCassi;
 
 document.querySelector('.copy').onclick = copyBibliography;
+
+document.querySelector('.remove').onclick = handleRemove;
 
 document.querySelector('.clear').onclick = clearAll;

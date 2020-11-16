@@ -12,7 +12,7 @@
     <div id='left-container'>
         <h1>ACS Citation Tool (online articles only)</h1>
         <p id='self'>By: Bryan Wong</p>
-        <p>Names option 1 (example: John Doe, Jane Lo... <span class='arrow'>&#8594;</span> Doe, J.; Lo, J.;...) <span class='desc'>- also filters titles such as 'Dr.', 'Mr.', 'Mrs.', 'and' word, and unnecessary whitespaces. Sorts results alphabetically by last name.<b>Ensure that ALL names are COMMA-SEPARATED</b></span></p>
+        <p>Names option 1 (example: John Doe, Jane Lo... <span class='arrow'>&#8594;</span> Doe, J.; Lo, J.; ...) <span class='desc'>- also filters titles such as 'Dr.', 'Mr.', 'Mrs.', 'and' word, and unnecessary whitespaces. Sorts results alphabetically by last name.<b>Ensure that ALL names are COMMA-SEPARATED</b></span></p>
         <textarea id='names-input' autocomplete='off' placeholder='enter comma separated names here...'></textarea>
         <p>Names option 2 (example: Lehman J W, ... <span class='arrow'>&#8594;</span> Lehman J. W.; ...) <span class='desc'>- similar filter as above. This option is used in the case whereby the Last Name is given first followed by the first and middle names.</span></p>
         <textarea id='names-input-2' autocomplete='off' placeholder='enter comma separated names here...'></textarea>
@@ -28,7 +28,6 @@
         <textarea id='pages' autocomplete='off' placeholder='enter year here...'></textarea>
         <div id='button-container'>
             <button class='btn submit'>Submit</button>
-            <button class='btn remove'>Remove Last Citation</button>
             <button class='btn cassi'>CASSI Website</button>
         </div>
     </div>
@@ -37,6 +36,7 @@
         <p id='note'>*Note: this app uses local storage to save your results upon exiting the browser</p>
         <div id='copy-clear-container'>
             <button class='btn copy'>Copy All</button>
+            <button class='btn remove'>Remove Last</button>
             <button class='btn clear'>Clear All</button>
         </div>
         <div id='results'></div>
