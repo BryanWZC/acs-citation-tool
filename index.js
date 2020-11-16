@@ -1,4 +1,9 @@
-let acsStringArr = [];
+let acsStringArr = window.localStorage.getItem('data') || [];
+
+if(typeof(acsStringArr) === 'string'){
+    acsStringArr = JSON.parse(acsStringArr);
+    document.querySelector('#results').innerHTML = acsStringArr.join('');
+} 
 
 /**
  * parses a comma separated string for full names into an acs parsed string
@@ -71,11 +76,12 @@ const parseStringToAcs = () => {
     const parsedNames = names1 ? handleNames(handleName, names1) : handleNames(handleName2, names2);
 
     const acsString = `
-    <p id='acs-citation'>${parsedNames}${handleArticleTitle(articleTitle)}<span>${handleJournalTitle(journalTitle)}</span>[online] <span id='span-year'>${handleYear(year)}</span><span>${handleVolume(volume)}</span>${handlePages(pages)}</p>
+    <p class='acs-citation'>${parsedNames}${handleArticleTitle(articleTitle)}<span>${handleJournalTitle(journalTitle)}</span>[online] <span class='span-year'>${handleYear(year)}</span><span>${handleVolume(volume)}</span>${handlePages(pages)}</p>
     `;
 
     acsStringArr.push(acsString);
-    document.querySelector('#results').innerHTML = acsStringArr.join('<br>');
+    document.querySelector('#results').innerHTML = acsStringArr.join('');
+    window.localStorage.setItem('data', JSON.stringify(acsStringArr));
 }
 
 /**
@@ -86,10 +92,43 @@ const handleRemove = () =>{
     document.querySelector('#results').innerHTML = acsStringArr.join('<br>');
 };
 
+/**
+ * Redirects to another tab with the cassi website
+ */
 const handleCassi = () => window.open('https://cassi.cas.org/search.jsp', '_blank');
 
+/**
+ * Copies all citations to clipboard
+ */
+const copyBibliography = () => {
+    navigator.clipboard.writeText(document.querySelector('#results').textContent.replace(/(\s\s)+/g, '\n').trim()).catch(err => console.log(err));
+
+    const copyBtn = document.querySelector('.copy');
+    copyBtn.textContent = 'Copied!';
+    setTimeout(() => copyBtn.textContent = 'Copy All', 800);
+}
+
+/**
+ * CLears all citation results
+ */
+const clearAll = () => {
+    const results = document.querySelector('#results');
+    results.innerHTML = '';
+    acsStringArr = [];
+    window.localStorage.setItem('data', '[]');
+
+    const clearBtn = document.querySelector('.clear');
+    clearBtn.textContent = 'Cleared!';
+    setTimeout(() => clearBtn.textContent = 'Clear All', 800);
+}
+
+// onClick events
 document.querySelector('.submit').onclick = parseStringToAcs;
 
 document.querySelector('.remove').onclick = handleRemove;
 
 document.querySelector('.cassi').onclick = handleCassi;
+
+document.querySelector('.copy').onclick = copyBibliography;
+
+document.querySelector('.clear').onclick = clearAll;
