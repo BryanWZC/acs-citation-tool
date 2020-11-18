@@ -149,6 +149,7 @@ span.span-year {
     font-weight: bold;
 }
 
+/*** For Tablet Views ***/
 @media only screen and (max-width: 800px) {
     body {
         flex-direction: column;
@@ -161,5 +162,24 @@ span.span-year {
     #right-container {
         width: 100%;
         padding-top: 0;
+    }
+}
+
+/*** For Mobile Views ***/
+@media only screen and (max-width: 500px) {
+    #button-container {
+        width: 250px;
+    }
+    .btn.submit, .btn.cassi {
+        width: 110px;
+        font-size: 16px;
+    }
+    #copy-clear-container {
+        width: 320px;
+    }
+    .btn.copy, .btn.clear, .btn.remove {
+        width: 80px;
+        height: 45px;
+        font-size: 14px;
     }
 }
